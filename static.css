@@ -44,14 +44,16 @@ body {
 
 .content {
   line-height: 2em;
-  padding: 0 10px !important;
+  padding: 0 20px !important;
   overflow: hidden;
+  background-color: #333;
 }
 
 @media (max-width: 480px) {
   .content {
     line-height: 1.6em;
     font-size: 17px;
-    margin: 10px 0 20px;
+    padding: 0 15px !important;
   }
 }
+
