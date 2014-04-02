@@ -1,0 +1,10 @@
+.main-wrap {
+	max-width: 600px;
+	min-width: 600px;
+	margin: 0 auto;
+}
+
+.content {
+	color: #444;
+	line-height: 2em;
+}
