@@ -1,10 +1,28 @@
+
+body {
+  padding-top: 0;
+  background: #f6f6f6;
+  margin: 0;
+}
+
 .main-wrap {
-	max-width: 600px;
-	min-width: 600px;
-	margin: 0 auto;
+  max-width: 600px;
+  min-width: 300px;
+  margin: 0 auto;
 }
 
 .content {
-	color: #444;
-	line-height: 2em;
+  color: #444;
+  line-height: 2em;
+  padding: 0 20px !important;
+  overflow: hidden;
+  background-color: white;
+}
+
+@media (max-width: 480px) {
+  .content {
+    line-height: 1.6em;
+    font-size: 17px;
+    margin: 10px 0 20px;
+  }
 }
