@@ -1,8 +1,12 @@
 <html>
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="user-scalable=no, width=device-width">
-  <link rel="stylesheet" href="/css/static.css" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<link rel="stylesheet" href="./static/static.css" />
   <title>来自舟山的回忆 ｜ 十年磨一剑</title>
 </head>
 <body>
@@ -14,7 +18,8 @@
   </div>
 <div class="main-wrap">
   <div class="content">
-    <pre style="line-height: 2.0em; font-size: 17px;">　　三月的烟雨 飘摇的南方
+    <pre style="line-height: 2.0em; font-size: 17px; margin: 15px 0 25px">
+　　三月的烟雨 飘摇的南方
 　　你坐在你空空的米店
 　　你一手拿着苹果 一手拿着命运
 　　在寻找你自己的香
@@ -27,8 +32,82 @@
 　　我会洗干净头发 爬上桅杆
 　　撑起我们葡萄枝嫩叶般的家</pre>
 
-   <p>　　这首歌，应该被舟山或者泉州这样的海边小城买去，作为市歌，在细雨如斯的清晨广场上播放，整个小城都能隐隐地听到。人们懒洋洋地吃上早点，悠闲美好的一天即将开始。</p>
+   <p>　　周云蓬说，米店这首歌，应该被舟山或者泉州这样的海边小城买去，作为市歌，
+   在细雨如斯的清晨广场上播放，整个小城都能隐隐地听到。人们懒洋洋地吃上早点，悠闲美好的一天即将开始。
+   </p>
+   <p>　　是那样细雨如斯的清晨广场啊，记忆里只存在于江南，让我回想起若干年前的一趟浙江之行，特别是回到上海之前的舟山。
+   那是仅从地图上观察得来一个偶然的想法，开启了一段说走就走的旅程，访遍室友，无人同行，那就独自上路吧，
+   上海=&gt;杭州=&gt;绍兴=&gt;宁波=&gt;舟山=&gt;上海，似乎是回到一个原点，但放飞的心，从此再也没有停歇过。
+   </p>
+   <p>　　那是一个动车尚未普及的年代，尚还存在某些慢慢悠悠的绿皮火车，人们不论熟悉还是陌生，
+   都习惯于在扑克牌的消遣中度过城际之间的两三小时，
+   而我只习惯于观察着窗外，在春天的新绿里看着万物抽丝发芽，从会稽山下经过时会想像一下王羲之的兰亭集会。
+   </p>
+   <p>　　登上舟山岛的第一天，应该是个不算十分晴朗的慵懒的一天。日头西斜中，我在从宁波远道而来的轮渡上缓缓靠近。其实从宁波来到舟山，也只是站在车站广场的一个偶然的选择，随身只带了一本浙江省地图册，猜想舟山回上海应该有船吧，那就去舟山看看！轮船靠港时，看见码头工人们挥汗如雨的场景，我心想这个小岛上</p>
+   <p>　　刚认识的邻座是一位舟山海洋学院的学生，家在杭州的他来到舟山其实是不舍的，</p>
+   <p>　　从渡船的客车上下来，</p>
+   <p>　　天色渐晚，我还在这一条海鲜大排档街上徘徊，对于海鲜产品兴致缺缺的我只能在那里徘徊，</p>
+   <p>　　</p>
+   <pre>
+
+
+
+   </pre>
   </div>
 </div>
+
+<script type="text/javascript" src="./static/WeixinApi.js"></script>
+<script type="text/javascript">
+var WeixinApi = (function () {
+
+    "use strict";
+
+    /**
+     * 隐藏底部工具栏
+     */
+    function hideToolbar() {
+        WeixinJSBridge.call('hideToolbar');
+    }
+
+    /**
+     * 当页面加载完毕后执行，使用方法：
+     * WeixinApi.ready(function(Api){
+     *     // 从这里只用Api即是WeixinApi
+     * });
+     * @param readyCallback
+     */
+    function wxJsBridgeReady(readyCallback) {
+        if (readyCallback && typeof readyCallback == 'function') {
+            var Api = this;
+            var wxReadyFunc = function () {
+                readyCallback(Api);
+            };
+            if (typeof window.WeixinJSBridge == "undefined"){
+                if (document.addEventListener) {
+                    document.addEventListener('WeixinJSBridgeReady', wxReadyFunc, false);
+                } else if (document.attachEvent) {
+                    document.attachEvent('WeixinJSBridgeReady', wxReadyFunc);
+                    document.attachEvent('onWeixinJSBridgeReady', wxReadyFunc);
+                }
+            }else{
+                wxReadyFunc();
+            }
+        }
+    }
+
+    return {
+        version         :"1.7",
+        ready           :wxJsBridgeReady,
+        hideToolbar     :hideToolbar,
+    };
+})();
+
+  WeixinApi.ready(function(Api) {
+  	Api.hideToolbar();
+
+    var elToolbar = document.getElementById('toolbar');
+		        elToolbar.click(); // 先隐藏
+  });
+</script>
 </body>
 </html>
