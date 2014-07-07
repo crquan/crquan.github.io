@@ -58,56 +58,12 @@
 
 <script type="text/javascript" src="./static/WeixinApi.js"></script>
 <script type="text/javascript">
-var WeixinApi = (function () {
-
-    "use strict";
-
-    /**
-     * 隐藏底部工具栏
-     */
-    function hideToolbar() {
-        WeixinJSBridge.call('hideToolbar');
-    }
-
-    /**
-     * 当页面加载完毕后执行，使用方法：
-     * WeixinApi.ready(function(Api){
-     *     // 从这里只用Api即是WeixinApi
-     * });
-     * @param readyCallback
-     */
-    function wxJsBridgeReady(readyCallback) {
-        if (readyCallback && typeof readyCallback == 'function') {
-            var Api = this;
-            var wxReadyFunc = function () {
-                readyCallback(Api);
-            };
-            if (typeof window.WeixinJSBridge == "undefined"){
-                if (document.addEventListener) {
-                    document.addEventListener('WeixinJSBridgeReady', wxReadyFunc, false);
-                } else if (document.attachEvent) {
-                    document.attachEvent('WeixinJSBridgeReady', wxReadyFunc);
-                    document.attachEvent('onWeixinJSBridgeReady', wxReadyFunc);
-                }
-            }else{
-                wxReadyFunc();
-            }
-        }
-    }
-
-    return {
-        version         :"1.7",
-        ready           :wxJsBridgeReady,
-        hideToolbar     :hideToolbar,
-    };
-})();
-
   WeixinApi.ready(function(Api) {
-  	Api.hideToolbar();
+      Api.hideToolbar();
 
-    var elToolbar = document.getElementById('toolbar');
-		        elToolbar.click(); // 先隐藏
-  });
+      var elToolbar = document.getElementById('toolbar');
+      elToolbar.click(); // 先隐藏
+      });
 </script>
 </body>
 </html>
